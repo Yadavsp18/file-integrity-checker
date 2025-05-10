@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Integrity Checker</title>
+    <style>
+        body { font-family: Arial; background: #f0f2f5; text-align: center; padding: 50px; }
+        form { background: white; padding: 20px; border-radius: 8px; display: inline-block; }
+        input[type=file] { margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>Upload File</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Check Integrity</button>
+    </form>
+</body>
+</html>
